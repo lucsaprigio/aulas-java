@@ -1,20 +1,26 @@
 package br.com.treinaweb.semana2.classes;
 
-public class Diarista {
-    
-    // Atributos
-    public String nome;
+public class Diarista extends Pessoa {
 
-    public String telefone;
+    private String chavePix;
+    // Construtor - tem que ser o mesmo nome da classe, dentro dos parentes coloco
+    // os valores
+    public Diarista(String nome) {
+        // quando temos somente um no construtor atual, colocamos null nos outros
+        super(nome, null, null);
+    }
 
-    public String endereco;
+    public String getChavePix() {
+        return chavePix;
+    }
 
-    //Construtor - tem que ser o mesmo nome da classe, dentro dos parentes coloco os valores
-    public Diarista(String nome, String telefone, String endereco) {
-        // Pegue o atributo da classe acima, e atribua o valor do método construtor que criamos (Diarista)
-        this.nome = nome;
-        this.telefone = telefone;
-        this.endereco = endereco;
+    public void setChavePix(String chavePix) {
+        this.chavePix = chavePix;
+    }
+
+    public Diarista(String nome, String telefone, String endereco, String chavePix) {
+        super(nome, telefone, endereco);
+        this.chavePix = chavePix;
     }
 
     // métodos
