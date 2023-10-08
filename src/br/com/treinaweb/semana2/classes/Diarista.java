@@ -27,4 +27,19 @@ public class Diarista extends Pessoa {
     public void atender(String nomeCliente) {
         System.out.println("Realizando atendimento para cliente " + nomeCliente);
     }
+
+    // Está sendo sobrescrevento o método que está sendo usado em outra classe
+    @Override
+    public void sacar(double valor) {
+        var saldoAtual = this.getSaldo();
+        var novoSaldo = saldoAtual - valor;
+        this.setSaldo(novoSaldo);
+    }
+
+    @Override
+    public void depositar(double valor) {
+        var saldoAtual = this.getSaldo();
+        var novoSaldo = saldoAtual + valor;
+        this.setSaldo(novoSaldo);
+    }
 }

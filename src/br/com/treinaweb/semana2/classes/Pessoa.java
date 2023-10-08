@@ -1,6 +1,8 @@
 package br.com.treinaweb.semana2.classes;
 
-public class Pessoa {
+import br.com.treinaweb.semana2.classes.interfaces.ISaldo;
+
+public abstract class Pessoa implements ISaldo{
 
     // Vamos usar o padrão pojo, que colocamos o atributo como private e atribuimos os Getters e Setters nele
 
@@ -11,11 +13,14 @@ public class Pessoa {
 
     private String endereco;
 
+    private double saldo;
+
     //Constructor
     public Pessoa(String nome, String telefone, String endereco) {
         this.nome = nome; 
         this.telefone = nome;
         this.endereco = nome;
+        this.saldo = 0.0;
     }
 
     public String getNome() {
@@ -40,5 +45,13 @@ public class Pessoa {
 
     public void setEndereco(String endereco) {
         this.endereco = endereco;
+    }
+
+    public double getSaldo() {
+      return saldo;
+    }
+
+    protected void setSaldo(double saldo) {
+      this.saldo = saldo;
     }
 }
